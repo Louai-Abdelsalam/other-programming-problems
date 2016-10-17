@@ -1,0 +1,41 @@
+Temperature
+-----------
+
+Leutonians, being reasonable people, use the Celsius scale for
+temperature. However, their neighbours, the Wrightonians use the lesser
+known HandEgg scale. Since Leutonians are bad at math, this confuses
+them immensely. They only know that anything below 0 HandEgg is too
+cold, and above 25 HandEgg is too hot.
+
+Your task is to write a programme that given a temperature in HandEgg
+between 0 and 25 (inclusive) converts it to Celsius. If the temperature
+in HandEgg is h, the temperature in Celsius is 2 * h - 10.
+
+Input
+-----
+
+The input will be a single number h.
+
+Output
+------
+
+If the input temperature is below 0 HandEgg, the output must be 
+
+Too cold!
+
+If the input temperature is above 25 HandEgg, the output must be 
+
+Too hot!
+
+In every other case, the output must be only one number (followed by
+newline), the corresponding Celsius temperature.
+
+Sample Input
+------------
+
+22
+
+Sample Output
+-------------
+
+34

@@ -1,0 +1,33 @@
+Grades
+
+During the term each student writes three tests.
+For each test, the student receives a mark
+(a natural number greater than or equal to zero
+and smaller than or equal to 100).  The first 
+test is worth 20%, the second one 30% and the
+final one 50%.  We need your help with computing
+the weighted average (given as a real number greater 
+than or equal to zero and smaller than or equal 
+to 100 with two digits precision).
+
+Input
+
+The input consists of a single line.  The line
+consists of three natural number greater than or 
+equal to zero and smaller than or equal to 100.
+The numbers are separated by a single space.
+
+Output
+
+The output consists of a single line.  The
+line consists of a a real number greater
+than or equal to zero and smaller than or equal
+to 100 with two digits precision.
+
+Sample Input
+
+100 80 60
+
+Sample Output
+
+74.00

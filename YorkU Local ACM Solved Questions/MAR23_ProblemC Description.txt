@@ -1,0 +1,30 @@
+Ice Cream
+
+Spring is here and John loves ice cream. But John is also a cheapskate, so when he buys ice cream, he wants to be sure that he is getting the most for his money. Ice cream is commonly served in two ways: a cylindrical bowl full of ice cream, or a cone. Assume the cylindrical bowl is completely filled (but the icecream does not protrude over the top of the bowl). When served in a cone, the ice cream completely fills the cone, and there is a hemisphere of ice cream above the rim of the cone. John brings a ruler with him to the ice cream store, so that he can measure the height h and radius r of the cones and bowls as shown in the figure.
+
+
+Input
+
+There will be several input instances. (Each instance corresponds to one of the ice cream stores that John sometimes visits.) The first line of input will give a single positive integer t describing the number of problem instances.
+Each instance consists of the following information. First, there is a line containing a single positive integer n that describes the number of containers. Then there are n lines, one for each container. Each line consists of a word (either cone or bowl) followed by three positive integers: the height (in mm), radius (in mm) and cost (in cents).
+
+Output
+
+For each problem instance output the index of the container that yields the cheapest cost per cubic mm of ice cream. In other words, if it is the fifth container that is best, output 5. If there is a tie, then output the smallest index that yields the best cost per cubic mm.
+Hint: rounding errors could cause trouble in this question, so design your solution so that there is no rounding.
+
+Sample Input
+
+2
+2
+cone 120 60 200
+bowl 50 80 217
+4
+bowl 30 100 100
+bowl 45 100 150
+bowl 60 100 200
+cone 120 80 200
+Sample Output
+
+2
+1

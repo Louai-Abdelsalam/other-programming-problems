@@ -1,0 +1,53 @@
+Disputed Claims
+Kyle Pickett works in the county office and is in charge of land ownership in his county. When two
+people make claims on the same area of land, it is up to Kyle to determine who is the rightful owner.
+All land claims are conveniently in the shape of rectangles aligned along the north-south and east-west
+axes. When two people bring in claims, the first thing Kyle needs to do is to determine whether or
+not there is any overlap between them. Assuming that A and B are the two claims of land, there are
+four scenarios of interest to Kyle: A completely surrounding B, B completely surrounding A, A and
+B overlapping (but neither surrounding the other) and A and B not overlapping. The pictures below
+show two examples each of all four cases. Note that if A and B intersect at only a point or line they
+are considered non-overlapping.
+A
+B
+A
+B
+A surrounds B
+B
+A
+B A
+B surrounds A
+B
+A
+B
+A
+A and B overlap
+A
+B A
+B
+A and B do not overlap
+For this problem, you will read in descriptions of two rectangular claims, and determine which of the
+four cases is true.
+
+Input
+There will be multiple input sets. The first line of the input will be an integer n indicating the number
+of input sets. Each input set will consist of a single line containing 8 non-negative integers:
+x1A y1A x2A y2A x1B y1B x2B y2B
+where x1A, y1A are the coordinates of the lower left corner of A’s claim, and x2A, y2A are the upper
+right corner of A’s claim. The remaining four values are the corresponding corners of B’s claim. All
+claims will have non-zero area (pretty ridiculous claim otherwise!).
+
+Output
+For each input set, output either the phrase A surrounds B, B surrounds A, A and B overlap or A
+and B do not overlap. The two claims will never be identical.
+
+Sample Input
+3
+10 10 20 20 12 0 14 18
+00550066
+0 0 5 5 0 5 5 10
+
+Sample Output
+A and B overlap
+B surrounds A
+A and B do not overlap

@@ -1,0 +1,39 @@
+To and Fro
+
+Description
+
+Eric and Parke have devised a way of encrypting messages. They first decide secretly on the number of columns and write the message (letters only) down the columns, padding with extra random letters so as to make a rectangular array of letters. For example, if the message is, “There's no place like home on a snowy night” and there are five columns, Eric would write down
+
+ toioy
+hpknn
+eleai
+rahsg
+econh
+semot
+nlewx
+Note that Eric includes only letters and writes them all in lower case. In this example, Eric used the character ‘x’ to pad the message out to make a rectangle, although he could have used any letter.
+
+Eric then sends the message to Parke by writing the letters in each row, alternating left-to-right and right-to-left. So, the above would be encrypted as
+
+ toioynnkpheleaigshareconhtomesnlewx
+Your job is to recover for Parke the original message (along with any extra padding letters) from the encrypted one.
+
+Input
+
+There will be multiple input sets. Input for each set will consist of two lines. The first line will contain an integer in the range 2...20 indicating the number of columns used. The next line is a string of up to 200 lower case letters. The last input set is followed by a line containing a single 0, indicating end of input.
+
+Sample Input
+
+5
+toioynnkpheleaigshareconhtomesnlewx
+3
+ttyohhieneesiaabss
+0
+Output
+
+Each input set should generate one line of output, giving the original plaintext message, with no spaces.
+
+Sample Output
+
+theresnoplacelikehomeonasnowynightx
+thisistheeasyoneab

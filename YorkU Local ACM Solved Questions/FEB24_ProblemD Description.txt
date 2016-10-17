@@ -1,0 +1,37 @@
+Hiring workers
+
+You run a factory in which robots build widgets.  A robot takes exactly 24 hours to build a widget.  Widgets are very bulky, and you have no space to store them.  So you ask your customers to give you the exact time when they will pick up their widget, and you schedule the construction of that widget so that it is completed at the exact moment when the customer will arrive to pick up the widget.  Given a list of orders from customers, you have to determine what is the minimum number of robots you must have in your factory in order to successfully fill all the orders.
+
+Input
+-----
+
+The first line will contain a positive integer m, giving the number of problem instances.
+For each instance, the first line contains an integer n, where 0 <= n <= 100 000, giving the number of widgets ordered by customers.
+The next n lines each contain a single integer t_i, the time when the ith widget will be picked up (measured in minutes after noon on Jan 1, 2016).  0 <= t_i <= 1 000 000.  The t_i's are sorted in chronological order.
+
+Output
+------
+
+For each problem instance, output the minimum number of robots required.
+
+Sample Input
+------------
+
+2
+4
+10
+2000
+5000
+6000
+5
+15
+70
+1000
+1200
+1500
+
+Sample Output
+-------------
+
+2
+4

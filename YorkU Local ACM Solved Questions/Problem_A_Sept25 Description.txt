@@ -1,0 +1,61 @@
+Problem A - Parkside's Triangle
+-------------------------------
+
+Parkside's triangle is generated from two numbers:  one for the size and 
+another for the seed.  Here are two examples:
+
+size 5, seed 3
+3
+4 5
+6 7 8
+9 1 2 3
+4 5 6 7 8
+
+size 6, seed 7
+7
+8 9
+1 2 3
+4 5 6 7
+8 9 1 2 3
+4 5 6 7 8 9
+
+Input
+-----
+
+The input will contain several instances, each on a separate line.
+There will be at least one instance.  Each line will contain a size
+(between 1 and 20, inclusive) and a seed (between 1 and 9, inclusive).
+The last line of the input will be 0 0.
+
+Output
+------
+
+See sample output below.  There should be no blank spaces at the ends
+of the lines.  The output for successive instances should be separated
+by a single blank line (but there should be no blank line after the
+last triangle).
+
+Sample Input
+------------
+
+5 3
+6 7
+0 0
+
+Output for Sample Input
+-----------------------
+
+size 5, seed 3
+3
+4 5
+6 7 8
+9 1 2 3
+4 5 6 7 8
+
+size 6, seed 7
+7
+8 9
+1 2 3
+4 5 6 7
+8 9 1 2 3
+4 5 6 7 8 9

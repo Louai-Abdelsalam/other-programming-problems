@@ -1,0 +1,47 @@
+Classifying Triangles
+---------------------
+
+A triangle can be described by the lengths of its three sides.  However, 
+any given three lengths will not necessarily describe a triangle.  In this
+problem, you must determine the type of triangle, given three side lengths.
+
+Input		 
+-----	
+
+The first line of input will contain a positive integer T < 1000, where T 
+denotes the number of test cases.  Each of the next T lines will contain 
+three positive integers.  Each integer will be less than 10^9.
+
+Output
+------	 
+
+For each case of the input there will be one line of output.  It will be 
+formatted as: 
+Case #{x}: {triangle type}
+where x denotes the case number being processed and {triangle type} is 
+the type of the triangle.  {triangle type} will be one of the following, 
+depending on the values of the three sides:
+
+Invalid - The three sides cannot form a triangle
+Equilateral  - All three sides of valid triangle are equal
+Isosceles  - Exactly two of the sides of a valid triangle are equal
+Scalene - No pair of sides are equal in a valid triangle.
+ 
+Sample Input
+------------
+		 
+5
+1 2 5
+1 1 1
+4 4 2
+3 4 5
+1 1 2
+
+Sample Output
+-------------
+
+Case 1: Invalid
+Case 2: Equilateral
+Case 3: Isosceles
+Case 4: Scalene
+Case 5: Invalid

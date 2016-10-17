@@ -1,0 +1,62 @@
+The Easiest Problem
+-------------------
+
+When students are doing a programming contest, they sometimes forget to look 
+at the scoreboard to see which problems are the easiest.  (Hint:  the one 
+that has been solved by the most competitors is usually the easiest.)
+
+Anne decides that it is too much trouble to keep checking the scoreboard, 
+so she wants to spend the first half hour of the contest writing a programmme 
+that will look at the scoreboard for her and tell her which problem is the
+easiest.
+
+Input
+-----
+
+The input will consist of several instances.
+
+The first line of input will contain a positive integer T, representing the 
+number of input instances.
+
+Each input instance will begin with a line that contains two positive integers 
+n and m, giving the number of teams competing and the number of problems, 
+respectively.
+Then, there will be n lines (one line for each competitor).  Each line will
+contain a name, followed by m integers representing the time that the 
+competitor solved Problem 1, Problem 2, ..., Problem m.
+If the competitor has not solved the problem yet, then the time listed will
+be 0; otherwise it will be the number of minutes elapsed between the start of
+the contest and the time that the competitor solved the problem.
+
+In the first sample input below, Anne has solved no problems, Beatrice solved
+problems 2 and 4, and Chuck has solved problems 1 and 2.
+Notice that the competitors are not listed in any particular order.
+
+Output
+------
+
+For each instance, your programme should produce one line of output
+giving the problem that has been solved by the most people.  If there
+is a tie for the most-solved problem, give the lowest problem number
+that has been solved by the maximum number of competitors.  Ignore
+the amount of time competitors needed to solve the various problems.
+
+Sample Input
+------------
+
+2
+3 5
+Anne 0 0 0 0 0
+Chuck 34 65 0 0 0
+Beatrice 0 9 0 18 0
+4 2
+Anne 0 0
+Helene 88 12
+Bernard 12 87
+Philippa 0 0
+
+Sample Output
+-------------
+
+Problem 2 is easiest.
+Problem 1 is easiest.

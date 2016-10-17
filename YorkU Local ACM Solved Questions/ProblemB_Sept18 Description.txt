@@ -1,0 +1,60 @@
+Election
+--------
+
+Tommy, Stevey and Justin are running for election to the position of
+Grand Poobah of the Society of Redundancy Society (SRS).  In the
+election, each voter votes for exactly one candidate, who can be
+either one of the declared candidates or a write-in candidate.  Thus,
+for example, a voter can decide to vote for Lizzie instead of one of
+the three declared candidates by writing Lizzie's name on the ballot.
+Voting is done via secret ballot.  If one candidate gets strictly more
+than half of the votes, he or she is declared the winner.  If not, the
+person who got the fewest votes is disqualified, and another round of
+voting is performed.  (A candidate who is disqualified in one round
+cannot be chosen in a subsequent round, even as a write-in candidate.)
+
+Your job is to look at the votes for one round and determine whether
+some candidate got strictly more than half the votes cast. 
+
+Input format
+------------
+
+The input file will contain multiple problem instances.
+
+The first line of each instance will contain a positive integer n
+(where n <= 1000000), indicating the number of ballots cast.  Each of
+the next n lines will contain a single name (consisting only of upper-
+and lower-case letters).
+
+The end of the input file will be indicated by an instance with n=0.
+
+Output format
+-------------
+
+Your programme should report the name of the person who got a strict
+majority (if there is one) or say that there was no strict majority
+otherwise.  Use the format shown in the sample output below.
+
+Sample Input
+------------
+
+6
+Justin
+Stevie
+Justin
+Tommy
+Justin
+Justin
+5
+Lizzie
+Justin
+Stevie
+Tommy
+Lizzie
+0
+
+Sample Output
+-------------
+
+Justin got a strict majority.
+There was no strict majority.
