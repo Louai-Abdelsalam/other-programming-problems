@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0089)https://www.eecs.yorku.ca/course_archive/2014-15/S/1030/guides/MazeSolver/MazeSolver.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>EECS 1030 - Lab Exercise</title>
+	
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="Author" content="Steven J. Castellucci">
+	<meta name="robots" content="noindex, nofollow">
+</head>
+<body alink="#CC0000" bgcolor="#FFFFFF" link="#FF1908" vlink="#CC0000">
+
+<div align="center">
+<h1 style="color:#CC0000">EECS 1030 Z, Summer 2015</h1>
+<h2 style="color:#CC0000">Maze Solver</h2>
+<p>&nbsp;</p>
+</div>
+
+
+<h3>Your Task</h3>
+
+<p>Create a class named "MazeSolver" that finds a path from a start room to a destination within a maze using recursion. Each room can have a maximum of four doors, one north, one east, one south, and one west. However, a room may have less than four doors, or none at all.
+
+</p><p>The API for the <code>MazeRoom</code> class is available <a href="https://www.eecs.yorku.ca/course_archive/2014-15/S/1030/guides/MazeSolver/api/MazeRoom.html">here</a>. The class has already been provided as part of the <tt>1030.jar</tt> file. <a href="https://www.eecs.yorku.ca/course_archive/2014-15/S/1030/guides/MazeSolver/1030.jar">Download it here</a> and remember its location. In Eclipse, add the jar to your build path (goto Project &gt; Properties &gt; Java Build Path &gt; Libraries &gt; Add External JARs...). Navigate to the location of the jar, select it, and click "Open".
+
+</p><p>Use the following code to create a class named "MazeSolver":
+</p><pre>import java.io.PrintStream;
+import java.util.Scanner;
+
+/**
+ * 	Given a MazeRoom and a room name, the search facility of this class
+ * 	will return a path to the desired room, if one exists.
+ */
+public class MazeSolver
+{
+	private MazeRoom start;
+	
+	/**
+	 * 	Initializes this object.
+	 */
+	public MazeSolver()
+	{
+		start = MazeRoom.buildMaze();
+	}
+	
+	/**
+	 * 	Provides access to the maze entrance.
+	 * 	@return the entrance to the maze.
+	 */
+	public MazeRoom getEntrance()
+	{
+		return start;
+	}
+	
+	/**
+	 * 	Finds a path from the current room in the maze to the room with the name
+	 * 	provided by <code>goal</code>, if one exists.
+	 * 	@param current the current room being searched.
+	 * 	@param from the room (just searched) through which this room was entered.
+	 * 	@param goal the name of the destination room.
+	 * 	@return a path from the current room to the goal (e.g., "A-&gt;F-&gt;G"), or
+	 * 		<code>null</code> if no path exists.
+	 */
+	public String findPath(MazeRoom current, MazeRoom from, String goal)
+	{
+		// Your code goes here...
+		// Hint: When you enter a room (i.e., current) search each connected,
+ 		// non-null room (using goNorth(), goSouth(), goEast(), and goWest()),
+		// except the one from which you just came (i.e., from). Stop when the
+		// current room's name is the goal.
+		;
+		
+		
+		
+		
+		
+	}
+
+	/**
+	 * 	Used to test the functionality of this class.
+	 */
+	public static void main(String[] args)
+	{
+		PrintStream out = System.out;
+		Scanner in = new Scanner(System.in);
+		MazeSolver ms = new MazeSolver();
+		MazeRoom start = ms.getEntrance();
+		out.println("The entrance to the maze is room " + start.getName());
+		out.print("Enter the destination room name: ");
+		String goal = in.next();
+		String path = ms.findPath(start, null, goal);
+		out.print("The path from " + start.getName() + " to " + goal + " is ");
+		out.println(path == null ? "non existent!" : (path + "."));
+	}
+}
+</pre>  
+Implement the <code>findPath</code> method and use this code to test your class. Ensure that you know what this code does and how it works.
+
+<p>Note that line 17 calls <code>MazeRoom.buildMaze()</code>. This returns a reference to "A" in the maze illustrated here:
+</p><div align="center"><img src="./EECS 1030 - Lab Exercise_files/MazeMap1.png"></div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<h3>Bonus Exercise</h3>
+
+<p>Take your solution tothe exercise above and change line 17 to read <code>start = MazeRoom.buildCyclicMaze();</code>. This generates the maze illustrated below. Run your solution and try to find a path from "I" to "L" or "N" or "B". What happens?
+</p><div align="center"><img src="./EECS 1030 - Lab Exercise_files/MazeMap2.png"></div>
+
+<p>The cycles (i.e., loops) in the maze can cause infinite recursive calls. To solve this issue, we can use a set to keep track of the rooms we have already visited. If a room is already in the set, we have already been there, so you do not need to search it (again).
+
+</p><p>Use the following code to create a class named "MazeSolver2":
+</p><pre>import java.io.PrintStream;
+import java.util.HashSet;
+import java.util.Scanner;
+
+/**
+ * 	Given a MazeRoom and a room name, the search facility of this class
+ * 	will return a path to the desired room, if one exists.
+ * 
+ * 	The search will succeed, even if the maze contains cycles (i.e., loops).
+ */
+public class MazeSolver2
+{
+	private MazeRoom start;
+	
+	/**
+	 * 	Initializes this object.
+	 */
+	public MazeSolver2()
+	{
+		start = MazeRoom.buildCyclicMaze();
+	}
+	
+	/**
+	 * 	Provides access to the maze entrance.
+	 * 	@return the entrance to the maze.
+	 */
+	public MazeRoom getEntrance()
+	{
+		return start;
+	}
+	
+	/**
+	 * 	Finds a path from the current room in the maze to the room with the name
+	 * 	provided by <code>goal</code>, if one exists.
+	 * 	@param current the current room being searched.
+	 * 	@param goal the name of the destination room.
+	 * 	@param visited all the rooms already searched.
+	 * 	@return a path from the current room to the goal (e.g., "A-&gt;F-&gt;G"), or
+	 * 		<code>null</code> if no path exists.
+	 */
+	public String findPath(MazeRoom current, String goal,
+			HashSet&lt;MazeRoom&gt; visited)
+	{
+		// Your code goes here...
+		// Hint: When you enter a room (i.e., current) search each connected,
+ 		// non-null room (using goNorth(), goSouth(), goEast(), and goWest()),
+		// except ones that are already in the set. Stop when the current room's
+		// name is the goal.
+		;
+		
+		
+		
+		
+		
+	}
+
+	/**
+	 * 	Used to test the functionality of this class.
+	 */
+	public static void main(String[] args)
+	{
+		PrintStream out = System.out;
+		Scanner in = new Scanner(System.in);
+		MazeSolver2 ms = new MazeSolver2();
+		MazeRoom start = ms.getEntrance();
+		out.println("The entrance to the maze is room " + start.getName());
+		out.print("Enter the destination room name: ");
+		String goal = in.next();
+		String path = ms.findPath(start, goal, new HashSet&lt;MazeRoom&gt;());
+		out.print("\nThe path from " + start.getName() + " to " + goal + " is ");
+		out.println(path == null ? "non existent!" : (path + "."));
+	}
+
+}
+</pre>  
+Implement the <code>findPath</code> method and use this code to test your class. Ensure that you know what this code does and how it works.
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div align="center">--- End of Exercise ---</div>
+
+
+
+</body></html>
